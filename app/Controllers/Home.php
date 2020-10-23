@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 class Home extends BaseController
 {
@@ -7,6 +9,14 @@ class Home extends BaseController
 		return view('welcome_message');
 	}
 
+	public function show()
+	{
+		$data['nama'] = 'Bobby';
+		$title['judul'] = 'Mahasiswa';
+		echo view('mahasiswa/header', $title);
+		echo view('mahasiswa/index', $data);
+		echo view('mahasiswa/footer');
+	}
 	//--------------------------------------------------------------------
 
 }
